@@ -12,9 +12,10 @@ exports.getAllUsers=(req,res)=>{
 //CRUD - Create
 exports.createUser=(req,res)=>{
     const {productName, category, stockCount, locationCode, lastUpdated}=req.body;
-    connection.query('INSERT INTO student_enrollments (productName, category, stockCount, locationCode, lastUpdated) VALUES (?, ?, ?, ?, ?)', [productName, category, stockCount, locationCode, lastUpdated], (err, result)=>{
+    connection.query('INSERT INTO student_enrollments (productName, category, stockCount, locationCode, lastUpdated) VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)', [productName, category, stockCount, locationCode, lastUpdated], (err, result)=>{
         if(err) throw err;
         res.json({message: 'User created successfully', userId: result.insertId});
     })
 }
+
 
