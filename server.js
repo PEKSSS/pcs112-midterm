@@ -19,6 +19,9 @@ const app=express();
 
 // app.use(logger);
 app.use(cors());
+app.use(cors({
+  origin: 'https://pcs112-midterm-ojos.netlify.app' // No trailing slash!
+}));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));//this will allow us to read the URL body tags
 
@@ -28,4 +31,5 @@ app.use('/api',routes);
 //Server listening
 app.listen(process.env.PORT,()=>{
     console.log(`Server running on port ${process.env.PORT}`);
+
 });
