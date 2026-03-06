@@ -31,29 +31,30 @@ exports.createUser=(req,res)=>{
     })
 }
 
-//Edit a user
-//CRUD - Update
+// //Edit a user
+// //CRUD - Update
 
-exports.updateUser=(req,res)=>{
-    const {id, productName, category, stockCount, locationCode, lastUpdated}=req.body;
-    connection.query('UPDATE student_enrollments SET productName=?, category=?, stockCount=?, locationCode=? WHERE id=?', [productName, category, stockCount, locationCode, id], (err, result)=>{
-        if(err) throw err;
-        if(result.affectedRows>0)
-            res.json({message: 'User updated successfully'});
-        else
-            res.status(404).json({message: 'User not found'});
-        })
-    }
+// exports.updateUser=(req,res)=>{
+//     const {id, productName, category, stockCount, locationCode, lastUpdated}=req.body;
+//     connection.query('UPDATE student_enrollments SET productName=?, category=?, stockCount=?, locationCode=? WHERE id=?', [productName, category, stockCount, locationCode, id], (err, result)=>{
+//         if(err) throw err;
+//         if(result.affectedRows>0)
+//             res.json({message: 'User updated successfully'});
+//         else
+//             res.status(404).json({message: 'User not found'});
+//         })
+//     }
 
-//Delete a user
-//CRUD - Delete
-exports.deleteUser=(req,res)=>{
-    const id=req.body.id;
-    connection.query('DELETE FROM student_enrollments WHERE id=?', [id], (err, result)=>{
-        if(err) throw err;
-        if(result.affectedRows>0)
-            res.json({message: 'User deleted successfully'});
-        else
-            res.status(404).json({message: 'User not found'});
-    })
-}
+// //Delete a user
+// //CRUD - Delete
+// exports.deleteUser=(req,res)=>{
+//     const id=req.body.id;
+//     connection.query('DELETE FROM student_enrollments WHERE id=?', [id], (err, result)=>{
+//         if(err) throw err;
+//         if(result.affectedRows>0)
+//             res.json({message: 'User deleted successfully'});
+//         else
+//             res.status(404).json({message: 'User not found'});
+//     })
+// }
+
