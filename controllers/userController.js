@@ -10,16 +10,16 @@ exports.getAllUsers=(req,res)=>{
 
 // Search a user by id
 // CRUD - Report
-exports.getUserById=(req,res)=>{
-    const id=req.params.id;
-    connection.query('SELECT * FROM student_enrollments WHERE id=?', [id], (err, rows, fields)=>{
-        if(err) throw err;
-        if(rows.length>0)
-            res.json(rows);
-        else
-            res.status(404).json({message: "User not found"});
-    });
-}
+// exports.getUserById=(req,res)=>{
+//     const id=req.params.id;
+//     connection.query('SELECT * FROM student_enrollments WHERE id=?', [id], (err, rows, fields)=>{
+//         if(err) throw err;
+//         if(rows.length>0)
+//             res.json(rows);
+//         else
+//             res.status(404).json({message: "User not found"});
+//     });
+// }
 
 //Create a new user
 //CRUD - Create
@@ -57,4 +57,5 @@ exports.createUser=(req,res)=>{
 //             res.status(404).json({message: 'User not found'});
 //     })
 // }
+
 
